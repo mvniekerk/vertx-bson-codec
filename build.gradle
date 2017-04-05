@@ -1,0 +1,29 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencies {
+    compile 'io.vertx:vertx-core:3.3.3'
+    compile 'io.vertx:vertx-web:3.3.3'
+    compile 'org.grails:grails-datastore-gorm-rx-mongodb:6.1.0.RC1'
+    compile 'org.codehaus.groovy:groovy-all:2.4.9'
+    compile 'org.reflections:reflections:0.9.10'
+    compile 'za.co.koperfontein:vertx-utils:0.1.2'
+    compile 'org.apache.commons:commons-lang3:3.4'
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.spockframework:spock-core:1.1-groovy-2.4-rc-2"
+}
+
+task run(type: JavaExec) {
+    main = "za.co.koperfontein.diaframs.vertx.DiaframsVertxServer"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+
+test {
+    testLogging.showStandardStreams = true
+}
