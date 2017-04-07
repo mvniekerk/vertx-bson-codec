@@ -1,4 +1,4 @@
-package za.co.koperfontein.vertxbsoncodec
+package za.co.koperfontein.vertx.bsoncodec
 
 @FunctionalInterface
 interface MD5 {

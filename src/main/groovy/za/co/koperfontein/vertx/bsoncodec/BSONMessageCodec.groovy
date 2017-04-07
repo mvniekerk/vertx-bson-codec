@@ -1,4 +1,4 @@
-package za.co.koperfontein.vertxbsoncodec
+package za.co.koperfontein.vertx.bsoncodec
 
 import groovy.transform.CompileStatic
 import io.vertx.core.buffer.Buffer
@@ -9,7 +9,7 @@ import io.vertx.core.json.EncodeException
 import java.sql.Timestamp
 import java.util.regex.Pattern
 
-import static za.co.koperfontein.vertxbsoncodec.LE.*
+import static LE.*
 
 @CompileStatic
 class BSONMessageCodec implements MessageCodec<BSONDocument, BSONDocument> {

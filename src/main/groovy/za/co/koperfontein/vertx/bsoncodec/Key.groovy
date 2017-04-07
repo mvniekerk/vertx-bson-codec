@@ -1,4 +1,4 @@
-package za.co.koperfontein.vertxbsoncodec
+package za.co.koperfontein.vertx.bsoncodec
 
 class Key {
     private Key() {}

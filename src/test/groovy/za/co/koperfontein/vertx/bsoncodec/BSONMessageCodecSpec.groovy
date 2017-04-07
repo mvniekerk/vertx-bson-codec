@@ -1,4 +1,4 @@
-package za.co.koperfontein.vertxbsoncodec
+package za.co.koperfontein.vertx.bsoncodec
 
 import io.vertx.core.buffer.Buffer
 import spock.lang.Shared
