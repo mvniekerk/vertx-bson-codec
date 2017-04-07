@@ -1,8 +1,36 @@
-apply plugin: 'groovy'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'net.nemerosa:versioning:2.4.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
 
+apply plugin: 'groovy'
+apply plugin: 'net.nemerosa.versioning'
+apply plugin: 'com.jfrog.bintray'
+
+project.extensions.isRelease = versioning.info.branchType == 'release' && !versioning.info.display.contains("SNAPSHOT")
+project.extensions.isFeature = versioning.info.branchType == 'feature'
+
+//Jar setup
+version = project.extensions.isFeature ? '' + versioning.info.branchId + '-SNAPSHOT' : versioning.info.display
+version = System.properties.getProperty("VERSION") ?: version
+
+group = "za.co.koperfontein.vertx"
+
+//Dependencies
 repositories {
     mavenLocal()
     jcenter()
+}
+
+versioning {
+    releaseMode = { nextTag, lastTag, currentTag, extension ->
+        currentTag ? "${currentTag}" : "${nextTag}-SNAPSHOT"
+    }
 }
 
 dependencies {

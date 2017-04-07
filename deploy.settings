@@ -1,0 +1,6 @@
+siteUrl = https://github.com/mvniekerk/vertx-bson-codec
+gitUrl = git@github.com:mvniekerk/vertx-bson-codec.git
+groupId = za.co.koperfontein.vertx
+licenses = ['apache-2.0'] // or something else 
+id = bsoncodec
+name = vertx-bson-codec
